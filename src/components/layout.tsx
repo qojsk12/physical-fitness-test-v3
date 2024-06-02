@@ -1,5 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import styled from "styled-components";
+import TimeoutRedirect from "./timeoutredirect";
 
 const Wrapper = styled.div`
   display: grid;
@@ -26,7 +27,9 @@ export default function Layout() {
           <MenuItem>체력측정</MenuItem>
         </Link>
       </Menu>
-      <Outlet />
+      <TimeoutRedirect>
+        <Outlet />
+      </TimeoutRedirect>
     </Wrapper>
   );
 }
