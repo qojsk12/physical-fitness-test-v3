@@ -1,18 +1,31 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import styled from "styled-components";
-import img from '../image/'
 
 const Wrapper = styled.div`
-  background-color: tomato;
+  display: grid;
+  grid-template-rows: max-content;
   height: 100vh;
 `;
+
+const Menu = styled.div`
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+`;
+
+const MenuItem = styled.div``;
 
 export default function Layout() {
   return (
     <Wrapper>
-      <Header>
-        <img src="" alt="" />
-      </Header>
+      <Menu>
+        <Link to="/">
+          <MenuItem>home</MenuItem>
+        </Link>
+        <Link to="/profile">
+          <MenuItem>체력측정</MenuItem>
+        </Link>
+      </Menu>
       <Outlet />
     </Wrapper>
   );
