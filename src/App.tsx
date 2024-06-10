@@ -7,15 +7,15 @@ import PhysicalFitnessAssessment from './routes/PhysicalFitnessAssessment';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: `${process.env.PUBLIC_URL}/`,
     element: <Layout />,
     children: [
       {
-        path: '',
+        path: `${process.env.PUBLIC_URL}`,
         element: <Home />,
       },
       {
-        path: 'physical',
+        path: `${process.env.PUBLIC_URL}physical`,
         element: <PhysicalFitnessAssessment />,
       },
     ],
