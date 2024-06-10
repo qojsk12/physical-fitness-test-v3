@@ -1,5 +1,5 @@
-import { useEffect, useRef, ReactNode } from "react";
-import { useNavigate } from "react-router-dom";
+import {useEffect, useRef, ReactNode, useCallback} from 'react';
+import {useNavigate} from 'react-router-dom';
 
 interface TimeoutRedirectProps {
   timeout?: number;
@@ -7,28 +7,28 @@ interface TimeoutRedirectProps {
 }
 
 export default function TimeoutRedirect({
-  timeout = 5000,
+  timeout = 120000,
   children,
 }: TimeoutRedirectProps) {
   const navigate = useNavigate();
   const timerRef = useRef<number | null>(null);
 
-  const resetTimer = () => {
+  const resetTimer = useCallback(() => {
     if (timerRef.current) {
       clearTimeout(timerRef.current);
     }
     timerRef.current = window.setTimeout(() => {
-      navigate("/");
+      navigate('/');
     }, timeout);
-  };
+  }, [navigate, timeout]);
 
   useEffect(() => {
     const handleActivity = () => {
       resetTimer();
     };
 
-    document.addEventListener("mousemove", handleActivity);
-    document.addEventListener("keydown", handleActivity);
+    document.addEventListener('mousemove', handleActivity);
+    document.addEventListener('keydown', handleActivity);
 
     resetTimer(); // 컴포넌트가 마운트될 때 타이머를 설정합니다.
 
@@ -36,10 +36,10 @@ export default function TimeoutRedirect({
       if (timerRef.current) {
         clearTimeout(timerRef.current);
       }
-      document.removeEventListener("mousemove", handleActivity);
-      document.removeEventListener("keydown", handleActivity);
+      document.removeEventListener('mousemove', handleActivity);
+      document.removeEventListener('keydown', handleActivity);
     };
-  }, [navigate, timeout]);
+  }, [resetTimer]);
 
   return <>{children}</>;
 }

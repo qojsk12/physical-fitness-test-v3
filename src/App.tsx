@@ -1,28 +1,41 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Layout from "./components/layout";
-import Home from "./routes/home";
-import Profile from "./routes/profile";
+import {RouterProvider, createBrowserRouter} from 'react-router-dom';
+import Layout from './components/layout';
+import Home from './routes/home';
+import {createGlobalStyle} from 'styled-components';
+import reset from 'styled-reset';
+import PhysicalFitnessAssessment from './routes/PhysicalFitnessAssessment';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Layout />,
     children: [
       {
-        path: "",
+        path: '',
         element: <Home />,
       },
       {
-        path: "profile",
-        element: <Profile />,
+        path: 'physical',
+        element: <PhysicalFitnessAssessment />,
       },
     ],
   },
 ]);
 
+const GlobalStyles = createGlobalStyle`
+  ${reset};
+  * {
+    box-sizing: border-box;
+  }
+  body {
+  font-family: "Jua", sans-serif;
+  }
+  `;
+
 function App() {
   return (
     <>
+      <GlobalStyles />
       <RouterProvider router={router} />
     </>
   );
