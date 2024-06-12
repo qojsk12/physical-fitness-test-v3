@@ -30,7 +30,7 @@ export default function Layout() {
   return (
     <Wrapper>
       <Menu>
-        <Link to={`${process.env.PUBLIC_URL}/`}>
+        <Link to="/">
           <MenuItem>
             <svg
               // dataSlot="icon"
@@ -44,7 +44,7 @@ export default function Layout() {
             </svg>
           </MenuItem>
         </Link>
-        <Link to={`${process.env.PUBLIC_URL}/physical`}>
+        <Link to="/physical">
           <MenuItem>
             <svg
               // dataSlot="icon"
