@@ -21,9 +21,12 @@ function App() {
       <GlobalStyles />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route path={`${process.env.PUBLIC_URL}/`} element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="physical" element={<PhysicalFitnessAssessment />} />
+            <Route
+              path={`${process.env.PUBLIC_URL}/physical`}
+              element={<PhysicalFitnessAssessment />}
+            />
           </Route>
         </Routes>
       </BrowserRouter>
