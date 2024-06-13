@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <BrowserRouter>
+      <BrowserRouter basename="pft-v2">
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
