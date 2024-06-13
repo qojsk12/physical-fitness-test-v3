@@ -33,7 +33,7 @@ export default function Layout() {
         <Link to="/">
           <MenuItem>
             <svg
-              // dataSlot="icon"
+              data-slot="icon"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@ export default function Layout() {
         <Link to="/physical">
           <MenuItem>
             <svg
-              // dataSlot="icon"
+              data-slot="icon"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
