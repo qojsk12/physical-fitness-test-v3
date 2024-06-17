@@ -12,9 +12,7 @@ const Wrapper = styled.div`
 export default function SnsItem() {
   return (
     <Wrapper>
-      <h2>item1</h2>
-      <h2>item2</h2>
-      <h2>item3</h2>
+      <h2>준비중</h2>
     </Wrapper>
   );
 }
