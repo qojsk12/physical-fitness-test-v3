@@ -10,9 +10,9 @@ interface ImageSliderProps {
 
 // 이미지 슬라이더 컨테이너 스타일
 const SliderContainer = styled.div`
-  box-shadow: 3px 2px 17px 14px #898888;
-  width: 1000px;
-  height: 700px;
+  box-shadow: 3px 2px 8px 4px #898888;
+  width: 1400px;
+  height: 800px;
   border: 0px;
   overflow: hidden;
   border-radius: 10px;
@@ -47,7 +47,7 @@ const SliderContent = styled.div`
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 `;
 
