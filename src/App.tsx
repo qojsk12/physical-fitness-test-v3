@@ -1,9 +1,9 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Layout from './components/layout';
-import Home from './routes/home';
-import {createGlobalStyle} from 'styled-components';
-import reset from 'styled-reset';
-import PhysicalFitnessAssessment from './routes/PhysicalFitnessAssessment';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./routes/layout";
+import Home from "./routes/home";
+import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
+import PhysicalFitnessAssessment from "./components/PhysicalFitnessAssessment";
 
 const GlobalStyles = createGlobalStyle`
   ${reset};
