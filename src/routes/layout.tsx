@@ -1,6 +1,6 @@
-import { Link, Outlet } from "react-router-dom";
-import styled from "styled-components";
-import TimeoutRedirect from "../components/timeoutredirect";
+import {Link, Outlet} from 'react-router-dom';
+import styled from 'styled-components';
+import TimeoutRedirect from '../components/timeoutredirect';
 
 const Wrapper = styled.div`
   display: grid;
@@ -21,7 +21,7 @@ const MenuItem = styled.div`
   align-items: center;
   justify-content: center;
   svg {
-    width: 30px;
+    width: 40px;
     fill: #000;
   }
 `;
