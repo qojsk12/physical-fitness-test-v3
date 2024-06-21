@@ -5,8 +5,8 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   img {
-    width: 400px;
-    height: 700px;
+    width: 250px;
+    height: 650px;
   }
 `;
 
