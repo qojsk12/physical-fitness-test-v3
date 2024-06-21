@@ -17,6 +17,7 @@ const SliderContainer = styled.div`
   overflow: hidden;
   border-radius: 10px;
   position: relative;
+  margin-top: 30px;
   .slick-dots {
     position: absolute;
     transform: translateX(-50%);
