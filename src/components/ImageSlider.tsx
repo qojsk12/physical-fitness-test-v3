@@ -17,6 +17,7 @@ const SliderContainer = styled.div`
   overflow: hidden;
   border-radius: 10px;
   position: relative;
+  margin-top: 30px;
   .slick-dots {
     position: absolute;
     transform: translateX(-50%);
@@ -55,11 +56,11 @@ export default function ImageSlider({images}: ImageSliderProps) {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 10000,
   };
 
   return (
