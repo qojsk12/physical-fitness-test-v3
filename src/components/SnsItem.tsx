@@ -1,18 +1,19 @@
 import styled from 'styled-components';
+import SnsBox from '../assets/images/snsbox.jpg';
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
   height: 100%;
+  img {
+    width: 400px;
+    height: 700px;
+  }
 `;
 
 export default function SnsItem() {
   return (
     <Wrapper>
-      <h2>준비중</h2>
+      <img src={SnsBox} alt="준비중" />
     </Wrapper>
   );
 }
