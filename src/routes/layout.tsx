@@ -30,6 +30,9 @@ const MenuItem = styled.div`
     width: 40px;
     fill: #000;
   }
+  :hover {
+    fill: #00d0ff;
+  }
 `;
 
 export default function Layout() {

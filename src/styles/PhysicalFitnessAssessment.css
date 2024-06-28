@@ -10,11 +10,8 @@
 }
 
 .gif__description {
-  /* box-shadow: inset 1px 3px 10px 3px #c1c1c1; */
   width: 100%;
   box-sizing: border-box;
-  /* padding: 40px 60px; */
-
   .physical__list-des {
     display: flex;
     width: 100%;
