@@ -4,8 +4,8 @@ import TimeoutRedirect from '../components/timeoutredirect';
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-rows: max-content;
-  height: 100vh;
+  flex-direction: column;
+  min-height: 100vh;
 `;
 
 const Menu = styled.div`
@@ -13,7 +13,13 @@ const Menu = styled.div`
   align-items: center;
   justify-content: center;
   gap: 20px;
-  margin: 10px 0;
+`;
+
+const Main = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const MenuItem = styled.div`
@@ -62,9 +68,11 @@ export default function Layout() {
           </MenuItem>
         </Link>
       </Menu>
-      <TimeoutRedirect>
-        <Outlet />
-      </TimeoutRedirect>
+      <Main>
+        <TimeoutRedirect>
+          <Outlet />
+        </TimeoutRedirect>
+      </Main>
     </Wrapper>
   );
 }

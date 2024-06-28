@@ -10,7 +10,6 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 1px 3px 10px 3px #c1c1c1;
 `;
 
 const SnsBox = styled.div`
