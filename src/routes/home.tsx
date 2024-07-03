@@ -1,9 +1,10 @@
 import ImageSlider from '../components/ImageSlider';
-import X4 from '../assets/images/001.png';
+import Event from '../assets/images/001.png';
+import Calender from '../assets/images/calendar.png';
 import styled from 'styled-components';
 import SnsItem from '../components/SnsItem';
 
-const imageUrls = [X4];
+const imageUrls = [Event, Calender];
 
 const Wrapper = styled.div`
   display: flex;
