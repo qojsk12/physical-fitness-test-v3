@@ -1,9 +1,9 @@
 import ImageSlider from '../components/ImageSlider';
-import X3 from '../assets/images/002.png';
+import X4 from '../assets/images/001.png';
 import styled from 'styled-components';
 import SnsItem from '../components/SnsItem';
 
-const imageUrls = [X3];
+const imageUrls = [X4];
 
 const Wrapper = styled.div`
   display: flex;

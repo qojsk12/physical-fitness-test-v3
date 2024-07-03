@@ -4,7 +4,7 @@ import TimeoutRedirect from '../components/timeoutredirect';
 
 const Wrapper = styled.div`
   display: grid;
-  flex-direction: column;
+  grid-template-rows: 1fr 15fr;
   min-height: 100vh;
 `;
 
@@ -13,6 +13,7 @@ const Menu = styled.div`
   align-items: center;
   justify-content: center;
   gap: 20px;
+  box-shadow: 3px -7px 10px 10px #898888;
 `;
 
 const Main = styled.div`
