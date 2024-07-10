@@ -1,9 +1,9 @@
 // components/PhysicalFitnessAssessment.tsx
 
-import { useState, useEffect } from "react";
-import _ from "lodash";
-import Section from "./Section";
-import MainImg from "./MainImg";
+import {useState, useEffect} from 'react';
+import _ from 'lodash';
+import Section from './Section';
+import MainImg from './MainImg';
 import {
   t__CardioItems,
   t__MuscularItems,
@@ -11,10 +11,10 @@ import {
   a__SpeedItems,
   a__PowerItems,
   e__CadioItems,
-} from "./data";
-import "../styles/PhysicalFitnessAssessment.css";
-import List from "./List";
-import { Item } from "../types";
+} from './data';
+import '../styles/PhysicalFitnessAssessment.css';
+import List from './List';
+import {Item} from '../types';
 
 export default function PhysicalFitnessAssessment() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -43,13 +43,13 @@ export default function PhysicalFitnessAssessment() {
         setActiveSection(null);
         setListSection(null);
         setListImg(null);
-      }, 120000);
+      }, 300000);
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener('mousemove', handleMouseMove);
       clearTimeout(mouseTimer);
     };
   }, []);
@@ -69,10 +69,10 @@ export default function PhysicalFitnessAssessment() {
           listSection={listSection}
           handleListSectionClick={handleListSectionClick}
           items={[
-            { section: "t__cadio", label: "심폐지구력", data: t__CardioItems },
+            {section: 't__cadio', label: '심폐지구력', data: t__CardioItems},
             {
-              section: "t__muscular",
-              label: "근지구력",
+              section: 't__muscular',
+              label: '근지구력',
               data: t__MuscularItems,
             },
           ]}
@@ -84,9 +84,9 @@ export default function PhysicalFitnessAssessment() {
           listSection={listSection}
           handleListSectionClick={handleListSectionClick}
           items={[
-            { section: "a__cadio", label: "심폐지구력", data: a__CardioItems },
-            { section: "a__speed", label: "민첩성", data: a__SpeedItems },
-            { section: "a__power", label: "순발력", data: a__PowerItems },
+            {section: 'a__cadio', label: '심폐지구력', data: a__CardioItems},
+            {section: 'a__speed', label: '민첩성', data: a__SpeedItems},
+            {section: 'a__power', label: '순발력', data: a__PowerItems},
           ]}
         />
         <Section
@@ -96,7 +96,7 @@ export default function PhysicalFitnessAssessment() {
           listSection={listSection}
           handleListSectionClick={handleListSectionClick}
           items={[
-            { section: "e__cadio", label: "심폐지구력", data: e__CadioItems },
+            {section: 'e__cadio', label: '심폐지구력', data: e__CadioItems},
           ]}
         />
       </div>
@@ -105,12 +105,12 @@ export default function PhysicalFitnessAssessment() {
         {listSection === null && (
           <MainImg listImg={listImg} handleListImgClick={handleListImgClick} />
         )}
-        {listSection === "t__cadio" && renderList(t__CardioItems)}
-        {listSection === "t__muscular" && renderList(t__MuscularItems)}
-        {listSection === "a__cadio" && renderList(a__CardioItems)}
-        {listSection === "a__speed" && renderList(a__SpeedItems)}
-        {listSection === "a__power" && renderList(a__PowerItems)}
-        {listSection === "e__cadio" && renderList(e__CadioItems)}
+        {listSection === 't__cadio' && renderList(t__CardioItems)}
+        {listSection === 't__muscular' && renderList(t__MuscularItems)}
+        {listSection === 'a__cadio' && renderList(a__CardioItems)}
+        {listSection === 'a__speed' && renderList(a__SpeedItems)}
+        {listSection === 'a__power' && renderList(a__PowerItems)}
+        {listSection === 'e__cadio' && renderList(e__CadioItems)}
       </div>
     </div>
   );

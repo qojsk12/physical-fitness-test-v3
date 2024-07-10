@@ -7,7 +7,7 @@ interface TimeoutRedirectProps {
 }
 
 export default function TimeoutRedirect({
-  timeout = 120000,
+  timeout = 300000,
   children,
 }: TimeoutRedirectProps) {
   const navigate = useNavigate();
