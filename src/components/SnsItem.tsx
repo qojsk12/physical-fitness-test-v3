@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import SnsBox from '../assets/images/snsbox.jpg';
+import styled from "styled-components";
+import SnsBox from "../assets/images/snsbox.jpg";
 
 const Wrapper = styled.div`
   width: 100%;

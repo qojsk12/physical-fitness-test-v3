@@ -1,8 +1,8 @@
-import ImageSlider from '../components/ImageSlider';
-import Event from '../assets/images/001.png';
-import Calender from '../assets/images/calendar.png';
-import styled from 'styled-components';
-import SnsItem from '../components/SnsItem';
+import ImageSlider from "../components/ImageSlider";
+import Event from "../assets/images/001.png";
+import Calender from "../assets/images/calendar.png";
+import styled from "styled-components";
+import SnsItem from "../components/SnsItem";
 
 const imageUrls = [Event, Calender];
 
@@ -34,3 +34,4 @@ export default function Home() {
     </Wrapper>
   );
 }
+`~`

@@ -1,8 +1,8 @@
 // src/ImageSlider.tsx
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import styled from 'styled-components';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import styled from "styled-components";
 
 interface ImageSliderProps {
   images: string[];
@@ -51,7 +51,7 @@ const SliderContent = styled.div`
   }
 `;
 
-export default function ImageSlider({images}: ImageSliderProps) {
+export default function ImageSlider({ images }: ImageSliderProps) {
   const settings = {
     dots: true,
     infinite: true,
