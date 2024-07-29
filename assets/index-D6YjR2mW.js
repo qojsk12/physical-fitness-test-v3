@@ -1643,7 +1643,7 @@ Error generating stack: `+a.message+`
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 35px;
+  top: 15%;
   left: 0px;
   border: none;
   border-radius: 5px;
