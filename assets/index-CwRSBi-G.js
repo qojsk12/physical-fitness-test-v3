@@ -1606,7 +1606,7 @@ Error generating stack: `+a.message+`
     max-height: 100%;
     object-fit: cover;
   }
-`;function $U({images:t}){const e={dots:!0,infinite:!0,speed:2e3,slidesToShow:1,slidesToScroll:1,autoplay:!0,autoplaySpeed:1e4,adaptiveHeight:!0};return j.jsx(MU,{children:j.jsx(DU,{...e,children:t.map((n,r)=>j.jsx(zU,{children:j.jsx("img",{src:n,alt:`Slide ${r}`})},r))})})}const UU="/physical-fitness-test-v3/assets/%EC%B2%B4%EB%A0%A5%EC%99%95%ED%8F%AC%EC%8A%A4%ED%84%B0-ToTQ8SFQ.jpg",jU="/physical-fitness-test-v3/assets/%EC%8A%A4%ED%8F%AC%EC%B8%A0%EC%9D%B8%EC%84%BC%ED%8B%B0%EB%B8%8C-%ED%8F%AC%EC%8A%A4%ED%84%B0-CIJ9dfaO.jpg",FU=Ye.div`
+`;function $U({images:t}){const e={dots:!0,infinite:!0,speed:2e3,slidesToShow:1,slidesToScroll:1,autoplay:!0,autoplaySpeed:15e3,adaptiveHeight:!0};return j.jsx(MU,{children:j.jsx(DU,{...e,children:t.map((n,r)=>j.jsx(zU,{children:j.jsx("img",{src:n,alt:`Slide ${r}`})},r))})})}const UU="/physical-fitness-test-v3/assets/%EC%B2%B4%EB%A0%A5%EC%99%95%ED%8F%AC%EC%8A%A4%ED%84%B0-ToTQ8SFQ.jpg",jU="/physical-fitness-test-v3/assets/%EC%8A%A4%ED%8F%AC%EC%B8%A0%EC%9D%B8%EC%84%BC%ED%8B%B0%EB%B8%8C-%ED%8F%AC%EC%8A%A4%ED%84%B0-CIJ9dfaO.jpg",FU=Ye.div`
   width: 100%;
   height: 100%;
   display: flex;
