@@ -1637,7 +1637,7 @@ Error generating stack: `+a.message+`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 50px;
 `,ZU=Ye.div`
   display: flex;
   flex-direction: column;
