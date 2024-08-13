@@ -1,0 +1,62 @@
+// components/Modal.tsx
+import React from 'react';
+import styled from 'styled-components';
+
+interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  children: React.ReactNode;
+}
+
+const Wrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+`;
+
+const ModalBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  max-width: 60%;
+  width: 100%;
+  height: 100%;
+  max-height: 90%;
+`;
+
+const Button = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  &:hover {
+    color: red;
+  }
+`;
+
+export default function Modal({isOpen, onClose, children}: ModalProps) {
+  if (!isOpen) return null;
+
+  return (
+    <Wrapper onClick={onClose}>
+      <ModalBox onClick={(e) => e.stopPropagation()}>
+        <Button onClick={onClose}>닫기</Button>
+        {children}
+      </ModalBox>
+    </Wrapper>
+  );
+}
