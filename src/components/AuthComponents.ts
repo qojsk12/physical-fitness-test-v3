@@ -1,19 +1,24 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Center = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 100vh;
-  background-color: #000;
 `;
 
 export const Wrapper = styled.div`
-  height: 100%;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 420px;
+  justify-content: center;
+  width: 600px;
   padding: 50px 0px;
+  background-color: #000;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 `;
 
 export const Title = styled.h1`
@@ -28,6 +33,7 @@ export const Form = styled.form`
   gap: 10px;
   width: 100%;
   margin-bottom: 10px;
+  padding: 30px;
 `;
 
 export const Input = styled.input`
@@ -36,7 +42,7 @@ export const Input = styled.input`
   border: none;
   width: 100%;
   font-size: 16px;
-  &[type="submit"] {
+  &[type='submit'] {
     cursor: pointer;
     &:hover {
       opacity: 0.8;

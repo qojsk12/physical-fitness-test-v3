@@ -24,7 +24,7 @@
       grid-template-rows: auto 1fr;
       width: 500px;
       height: 800px;
-      box-shadow: 0px 10px 10px 10px #898888;
+      box-shadow: 0px 5px 10px 5px #898888;
       box-sizing: border-box;
       border: 3px solid #000;
       background-color: #000;

@@ -1,7 +1,7 @@
-import { Link, Outlet, useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import TimeoutRedirect from "./timeoutredirect";
-import { auth } from "../firebase";
+import {Link, Outlet, useNavigate} from 'react-router-dom';
+import styled from 'styled-components';
+import TimeoutRedirect from './timeoutredirect';
+import {auth} from '../firebase';
 
 const Wrapper = styled.div`
   display: grid;
@@ -14,7 +14,7 @@ const Menu = styled.div`
   align-items: center;
   justify-content: center;
   gap: 20px;
-  box-shadow: 3px -7px 10px 10px #898888;
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
   position: relative;
   a {
     text-decoration: none;
@@ -23,22 +23,29 @@ const Menu = styled.div`
 `;
 
 const Main = styled.div`
-  flex: 1;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
+  position: relative;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 `;
 
-const MenuItem = styled.span`
-  display: block;
+const MenuItem = styled.div`
+  display: flex;
   cursor: pointer;
   font-size: 12px;
+  border: none;
+  border-radius: 10px;
+  &:hover {
+    transform: scale(1.2);
+    z-index: 10;
+    svg {
+      fill: #00d0ff;
+    }
+  }
   svg {
     width: 40px;
     fill: #000;
-    &:hover {
-      fill: #00d0ff;
-    }
   }
   &.log-out {
     position: absolute;
@@ -56,10 +63,10 @@ const MenuItem = styled.span`
 export default function Layout() {
   const navigate = useNavigate();
   const onLogOut = async () => {
-    const ok = confirm("로그아웃 하시겠습니까?");
+    const ok = confirm('로그아웃 하시겠습니까?');
     if (ok) {
       await auth.signOut();
-      navigate("/login");
+      navigate('/login');
     }
   };
   return (
@@ -94,7 +101,24 @@ export default function Layout() {
               <path
                 clip-rule="evenodd"
                 fill-rule="evenodd"
-                d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
+                d="M2.25 6a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V6Zm18 3H3.75v9a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V9Zm-15-3.75A.75.75 0 0 0 4.5 6v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75V6a.75.75 0 0 0-.75-.75H5.25Zm1.5.75a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V6Zm3-.75A.75.75 0 0 0 9 6v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75V6a.75.75 0 0 0-.75-.75H9.75Z"
+              ></path>
+            </svg>
+          </MenuItem>
+        </Link>
+        <Link to="/guide">
+          <MenuItem>
+            <svg
+              data-slot="icon"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                clip-rule="evenodd"
+                fill-rule="evenodd"
+                d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
               ></path>
             </svg>
           </MenuItem>

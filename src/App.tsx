@@ -1,15 +1,15 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Layout from "./components/layout";
-import Home from "./routes/home";
-import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
-import PhysicalFitnessAssessment from "./components/PhysicalFitnessAssessment";
-import { useEffect, useState } from "react";
-import LoadingScrean from "./components/loading-screen";
-import Login from "./components/Login";
-import CreateAccount from "./components/CreateAccount";
-import ProtectedRoute from "./components/ProtectedRoute";
-import { auth } from "./firebase";
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import Layout from './components/layout';
+import Home from './routes/home';
+import {createGlobalStyle} from 'styled-components';
+import reset from 'styled-reset';
+import PhysicalFitnessAssessment from './components/PhysicalFitnessAssessment';
+import {useEffect, useState} from 'react';
+import LoadingScrean from './components/loading-screen';
+import {auth} from './firebase';
+import Login from './components/Login';
+import CreateAccount from './components/CreateAccount';
+import Guide from './components/Guide';
 
 const GlobalStyles = createGlobalStyle`
   ${reset};
@@ -20,6 +20,35 @@ const GlobalStyles = createGlobalStyle`
     font-family: "Jua", sans-serif;
   }
 `;
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: '',
+        element: <Home />,
+      },
+      {
+        path: 'physical',
+        element: <PhysicalFitnessAssessment />,
+      },
+      {
+        path: '/guide',
+        element: <Guide />,
+      },
+    ],
+  },
+  {
+    path: '/login',
+    element: <Login />,
+  },
+  {
+    path: '/create-account',
+    element: <CreateAccount />,
+  },
+]);
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -33,27 +62,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      {isLoading ? (
-        <LoadingScrean />
-      ) : (
-        <BrowserRouter basename="physical-fitness-test-v3">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <ProtectedRoute>
-                  <Layout />
-                </ProtectedRoute>
-              }
-            >
-              <Route index element={<Home />} />
-              <Route path="physical" element={<PhysicalFitnessAssessment />} />
-            </Route>
-            <Route path="login" element={<Login />} />
-            <Route path="create-account" element={<CreateAccount />} />
-          </Routes>
-        </BrowserRouter>
-      )}
+      {isLoading ? <LoadingScrean /> : <RouterProvider router={router} />}
     </>
   );
 }
