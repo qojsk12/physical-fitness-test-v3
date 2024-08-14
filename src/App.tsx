@@ -10,6 +10,7 @@ import {auth} from './firebase';
 import Login from './components/Login';
 import CreateAccount from './components/CreateAccount';
 import Guide from './components/Guide';
+import {AssessmentProvider} from './components/AssessmentContext';
 
 const GlobalStyles = createGlobalStyle`
   ${reset};
@@ -62,7 +63,13 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      {isLoading ? <LoadingScrean /> : <RouterProvider router={router} />}
+      {isLoading ? (
+        <LoadingScrean />
+      ) : (
+        <AssessmentProvider>
+          <RouterProvider router={router} />
+        </AssessmentProvider>
+      )}
     </>
   );
 }

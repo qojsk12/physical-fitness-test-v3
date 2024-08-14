@@ -8,6 +8,11 @@ interface ModalProps {
   children: React.ReactNode;
 }
 
+const ContainerWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
 const Wrapper = styled.div`
   position: fixed;
   top: 0;
@@ -42,21 +47,24 @@ const Button = styled.div`
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 25px;
   &:hover {
     color: red;
   }
 `;
 
 export default function Modal({isOpen, onClose, children}: ModalProps) {
+  console.log(`Modal isOpen: ${isOpen}`);
   if (!isOpen) return null;
 
   return (
-    <Wrapper onClick={onClose}>
-      <ModalBox onClick={(e) => e.stopPropagation()}>
-        <Button onClick={onClose}>닫기</Button>
-        {children}
-      </ModalBox>
-    </Wrapper>
+    <ContainerWrapper onClick={(e) => e.stopPropagation()}>
+      <Wrapper onClick={onClose}>
+        <ModalBox onClick={(e) => e.stopPropagation()}>
+          <Button onClick={onClose}>닫기</Button>
+          {children}
+        </ModalBox>
+      </Wrapper>
+    </ContainerWrapper>
   );
 }

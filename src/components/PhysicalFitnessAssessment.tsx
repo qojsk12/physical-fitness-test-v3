@@ -1,6 +1,5 @@
 // components/PhysicalFitnessAssessment.tsx
-
-import {useState, useEffect} from 'react';
+import {useContext} from 'react';
 import _ from 'lodash';
 import Section from './Section';
 import MainImg from './MainImg';
@@ -15,44 +14,40 @@ import {
 import '../styles/PhysicalFitnessAssessment.css';
 import List from './List';
 import {Item} from '../types';
+import {AssessmentContext} from '../components/AssessmentContext';
 
 export default function PhysicalFitnessAssessment() {
-  const [activeSection, setActiveSection] = useState<string | null>(null);
-  const [listSection, setListSection] = useState<string | null>(null);
-  const [listImg, setListImg] = useState<string | null>(null);
+  const context = useContext(AssessmentContext);
+
+  if (!context) {
+    throw new Error(
+      'AssessmentContext must be used within an AssessmentProvider'
+    );
+  }
+
+  const {
+    activeSection,
+    listSection,
+    listImg,
+    setActiveSection,
+    setListSection,
+    setListImg,
+  } = context;
 
   const handleSectionClick = _.debounce((section: string) => {
-    setActiveSection(activeSection === section ? null : section);
+    const newSection = activeSection === section ? null : section;
+    setActiveSection(newSection);
   }, 50);
 
   const handleListSectionClick = _.debounce((list: string) => {
-    setListSection(listSection === list ? null : list);
+    const newList = listSection === list ? null : list;
+    setListSection(newList);
   }, 50);
 
   const handleListImgClick = _.debounce((item: string) => {
-    setListImg(listImg === item ? null : item);
+    const newImg = listImg === item ? null : item;
+    setListImg(newImg);
   }, 50);
-
-  useEffect(() => {
-    let mouseTimer: ReturnType<typeof setTimeout>;
-
-    const handleMouseMove = () => {
-      clearTimeout(mouseTimer);
-
-      mouseTimer = setTimeout(() => {
-        setActiveSection(null);
-        setListSection(null);
-        setListImg(null);
-      }, 300000);
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      clearTimeout(mouseTimer);
-    };
-  }, []);
 
   const renderList = (items: Item[]) => {
     return <List items={items} />;

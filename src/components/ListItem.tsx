@@ -18,6 +18,7 @@ const ListItem: React.FC<ListItemProps> = ({item}) => {
   };
 
   const closeModal = () => {
+    console.log('클릭');
     setIsModalOpen(false);
   };
   return (

@@ -82,8 +82,8 @@ export default function Layout() {
               aria-hidden="true"
             >
               <path
-                clip-rule="evenodd"
-                fill-rule="evenodd"
+                clipRule="evenodd"
+                fillRule="evenodd"
                 d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z"
               ></path>
             </svg>
@@ -99,8 +99,8 @@ export default function Layout() {
               aria-hidden="true"
             >
               <path
-                clip-rule="evenodd"
-                fill-rule="evenodd"
+                clipRule="evenodd"
+                fillRule="evenodd"
                 d="M2.25 6a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V6Zm18 3H3.75v9a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V9Zm-15-3.75A.75.75 0 0 0 4.5 6v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75V6a.75.75 0 0 0-.75-.75H5.25Zm1.5.75a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V6Zm3-.75A.75.75 0 0 0 9 6v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75V6a.75.75 0 0 0-.75-.75H9.75Z"
               ></path>
             </svg>
@@ -116,8 +116,8 @@ export default function Layout() {
               aria-hidden="true"
             >
               <path
-                clip-rule="evenodd"
-                fill-rule="evenodd"
+                clipRule="evenodd"
+                fillRule="evenodd"
                 d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
               ></path>
             </svg>
@@ -132,8 +132,8 @@ export default function Layout() {
             aria-hidden="true"
           >
             <path
-              clip-rule="evenodd"
-              fill-rule="evenodd"
+              clipRule="evenodd"
+              fillRule="evenodd"
               d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z"
             ></path>
           </svg>
