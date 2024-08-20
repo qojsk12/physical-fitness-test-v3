@@ -34,10 +34,10 @@ const ModalBox = styled.div`
   padding: 20px;
   border-radius: 8px;
   position: relative;
-  max-width: 60%;
+  max-width: 1200px;
   width: 100%;
   height: 100%;
-  max-height: 90%;
+  max-height: 800px;
 `;
 
 const Button = styled.div`
