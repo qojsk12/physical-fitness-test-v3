@@ -10,7 +10,8 @@ interface ImageSliderProps {
 
 // 이미지 슬라이더 컨테이너 스타일
 const SliderContainer = styled.div`
-  width: 566px;
+  width: 100%;
+  max-width: 566px;
   height: 100%;
   .slick-dots {
     padding: 0;
@@ -34,7 +35,8 @@ const SliderContainer = styled.div`
 // 슬라이드 내용 스타일
 const SliderContent = styled.div`
   border-radius: 10px;
-  height: 800px;
+  max-height: 800px;
+  height: 100%;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.2);
   img {

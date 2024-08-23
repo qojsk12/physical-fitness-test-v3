@@ -11,6 +11,7 @@ import Login from './components/Login';
 import CreateAccount from './components/CreateAccount';
 import Guide from './components/Guide';
 import {AssessmentProvider} from './components/AssessmentContext';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const GlobalStyles = createGlobalStyle`
   ${reset};
@@ -25,7 +26,11 @@ const GlobalStyles = createGlobalStyle`
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,
+    element: (
+      <ProtectedRoute>
+        <Layout />
+      </ProtectedRoute>
+    ),
     children: [
       {
         path: '',
