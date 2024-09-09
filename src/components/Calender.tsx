@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import MCalender from '../assets/images/calendar.png';
+import MCalender from '../assets/images/calendar.jpg';
 
 const ImgBox = styled.div`
   /* box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.2); */

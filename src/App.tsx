@@ -17,6 +17,8 @@ const GlobalStyles = createGlobalStyle`
   ${reset};
   * {
     box-sizing: border-box;
+    text-decoration: none;
+
   }
   body {
     font-family: "Jua", sans-serif;
@@ -41,7 +43,7 @@ const router = createBrowserRouter([
         element: <PhysicalFitnessAssessment />,
       },
       {
-        path: '/guide',
+        path: 'guide',
         element: <Guide />,
       },
     ],

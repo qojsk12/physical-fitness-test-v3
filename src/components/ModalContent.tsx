@@ -76,7 +76,7 @@ export default function ModalContent({item}: ModalContentProps) {
   return (
     <Wrapper>
       <VideoBox>
-        <Video controls muted>
+        <Video autoPlay controls muted>
           <source src={item.videoSrc} type="video/mp4" />
         </Video>
       </VideoBox>
