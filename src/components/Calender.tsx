@@ -4,11 +4,12 @@ import MCalender from '../assets/images/calendar.jpg';
 const ImgBox = styled.div`
   /* box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.2); */
   display: grid;
-  width: 1000px;
-  height: 100%;
+  max-width: 1000px;
+  max-height: 800px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   overflow: hidden;
+
   img {
     width: 100%;
     height: 100%;

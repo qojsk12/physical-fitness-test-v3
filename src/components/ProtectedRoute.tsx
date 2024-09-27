@@ -22,5 +22,6 @@ export default function ProtectedRoute({
   if (user === null) {
     return <Navigate to="/login" />;
   }
+
   return children;
 }
