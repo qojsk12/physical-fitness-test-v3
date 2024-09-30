@@ -2,7 +2,6 @@
 
 import React from 'react';
 import ListItem from './ListItem';
-import '../styles/List.css';
 import {Item} from '../types';
 
 interface ListProps {
