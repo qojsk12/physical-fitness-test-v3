@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import TimeoutRedirect from './timeoutredirect';
 import {auth} from '../firebase';
 import SidebarModal from './SidebarModal';
+import AnimatedText from './AnimatedText';
 
 interface MenuItemProps {
   isActive?: boolean;
@@ -16,7 +17,8 @@ const Wrapper = styled.div`
 `;
 
 const Menu = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 10fr;
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
@@ -107,6 +109,7 @@ export default function Layout() {
             ></path>
           </svg>
         </HamburgerIcon>
+        <AnimatedText />
       </Menu>
 
       <SidebarModal
