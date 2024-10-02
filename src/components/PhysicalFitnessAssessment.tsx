@@ -15,6 +15,38 @@ import '../styles/PhysicalFitnessAssessment.css';
 import List from './List';
 import {Item} from '../types';
 import {AssessmentContext} from '../components/AssessmentContext';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  box-sizing: border-box;
+  .clicked {
+    color: #d9ff00;
+  }
+`;
+
+const SelectMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  background-color: #083e58;
+  color: #fff;
+  width: 175px;
+`;
+
+const H2Title = styled.h2`
+  font-size: 30px;
+  padding-top: 14px;
+`;
+
+const GifDescription = styled.div`
+  width: 100%;
+  box-sizing: border-box;
+`;
 
 export default function PhysicalFitnessAssessment() {
   const context = useContext(AssessmentContext);
@@ -54,9 +86,9 @@ export default function PhysicalFitnessAssessment() {
   };
 
   return (
-    <div className="container mobile">
-      <div className="select__menu mobile">
-        <h2 className="h2__title">생애주기</h2>
+    <Container>
+      <SelectMenu>
+        <H2Title>생애주기</H2Title>
         <Section
           title="청소년기"
           activeSection={activeSection}
@@ -94,9 +126,9 @@ export default function PhysicalFitnessAssessment() {
             {section: 'e__cadio', label: '심폐지구력', data: e__CadioItems},
           ]}
         />
-      </div>
+      </SelectMenu>
 
-      <div className="gif__description">
+      <GifDescription>
         {listSection === null && (
           <MainImg listImg={listImg} handleListImgClick={handleListImgClick} />
         )}
@@ -106,7 +138,7 @@ export default function PhysicalFitnessAssessment() {
         {listSection === 'a__speed' && renderList(a__SpeedItems)}
         {listSection === 'a__power' && renderList(a__PowerItems)}
         {listSection === 'e__cadio' && renderList(e__CadioItems)}
-      </div>
-    </div>
+      </GifDescription>
+    </Container>
   );
 }

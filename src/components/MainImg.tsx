@@ -1,18 +1,16 @@
-// components/MainImg.tsx
-
-import React from 'react';
 import BloodDes from '../assets/images/BloodDes.png';
 import Blood from '../assets/images/Blood.png';
 import '../styles/MainImg.css';
+import {PhysicalListDes} from '../styles/styled-components';
 
 interface MainImgProps {
   listImg: string | null;
   handleListImgClick: (item: string) => void;
 }
 
-const MainImg: React.FC<MainImgProps> = ({listImg, handleListImgClick}) => {
+export default function MainImg({listImg, handleListImgClick}: MainImgProps) {
   return (
-    <div className="physical__list-des">
+    <PhysicalListDes>
       <div className="physical__list-item main">
         <div
           className="img__box mainImg"
@@ -25,8 +23,6 @@ const MainImg: React.FC<MainImgProps> = ({listImg, handleListImgClick}) => {
           )}
         </div>
       </div>
-    </div>
+    </PhysicalListDes>
   );
-};
-
-export default MainImg;
+}

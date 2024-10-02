@@ -1,78 +1,54 @@
-.clicked {
-  color: #d9ff00;
-}
-
-.container {
-  width: 100%;
-  height: 100%;
+.physical__list-item {
   display: grid;
-  grid-template-columns: 180px 1fr;
+  grid-template-rows: auto 1fr;
+  width: 500px;
+  height: 800px;
+  box-shadow: 0px 5px 10px 5px #898888;
   box-sizing: border-box;
-}
-
-.gif__description {
-  width: 100%;
-  box-sizing: border-box;
-  .physical__list-des {
+  border: 3px solid #000;
+  background-color: #000;
+  gap: 3px;
+  &.main {
     display: flex;
-    width: 100%;
-    height: 100%;
-    gap: 50px;
-    align-items: center;
-    justify-content: center;
-    .physical__list-item {
-      display: grid;
-      grid-template-rows: auto 1fr;
-      width: 500px;
-      height: 800px;
-      box-shadow: 0px 5px 10px 5px #898888;
-      box-sizing: border-box;
-      border: 3px solid #000;
-      background-color: #000;
-      gap: 3px;
-      &.main {
-        display: flex;
-        width: 1200px;
-        .mainImg {
-          height: 100%;
-          .main-img {
-            width: 100%;
-            height: 100%;
-            object-fit: fill;
-          }
-        }
-      }
-      .img__box {
+    width: 1200px;
+    .mainImg {
+      height: 100%;
+      .main-img {
         width: 100%;
-        height: 650px;
-        .gif-img {
-          padding: 1px;
-          width: 100%;
-          height: 100%;
-          object-fit: fill;
-          box-sizing: border-box;
-        }
+        height: 100%;
+        object-fit: fill;
       }
     }
-
-    .des__box {
-      background-color: #000;
+  }
+  .img__box {
+    width: 100%;
+    height: 650px;
+    .gif-img {
+      padding: 1px;
+      width: 100%;
       height: 100%;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      gap: 3px;
-      .img__description {
-        background-color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 20px;
-        white-space: nowrap;
-        &.span {
-          grid-column: span 2;
-        }
-      }
+      object-fit: fill;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.des__box {
+  background-color: #000;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 3px;
+  .img__description {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    white-space: nowrap;
+    &.span {
+      grid-column: span 2;
     }
   }
 }

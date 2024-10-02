@@ -1,18 +1,3 @@
-.select__menu {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-  background-color: #083e58;
-  color: #fff;
-  width: 175px;
-}
-
-.select__menu .h2__title {
-  font-size: 30px;
-  padding-top: 14px;
-}
-
 .ages {
   margin: 10px;
   display: flex;

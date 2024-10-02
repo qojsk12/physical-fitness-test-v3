@@ -3,6 +3,7 @@
 import React from 'react';
 import ListItem from './ListItem';
 import {Item} from '../types';
+import {PhysicalListDes} from '../styles/styled-components';
 
 interface ListProps {
   items: Item[];
@@ -10,11 +11,11 @@ interface ListProps {
 
 const List: React.FC<ListProps> = ({items}) => {
   return (
-    <div className="physical__list-des">
+    <PhysicalListDes>
       {items.map((item, index) => (
         <ListItem key={index} item={item} />
       ))}
-    </div>
+    </PhysicalListDes>
   );
 };
 
