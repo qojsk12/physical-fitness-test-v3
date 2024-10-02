@@ -1,8 +1,6 @@
-// components/Section.tsx
-
-import React from 'react';
-import '../styles/Section.css';
+import styled from 'styled-components';
 import {Item} from '../types';
+import {Span} from '../styles/styled-components';
 
 interface SectionProps {
   title: string;
@@ -13,43 +11,61 @@ interface SectionProps {
   items: {section: string; label: string; data: Item[]}[];
 }
 
-const Section: React.FC<SectionProps> = ({
+const Ages = styled.div`
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 22px;
+`;
+
+const Ul = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 18px;
+  transition-delay: 1s;
+`;
+
+const Li = styled.li`
+  box-sizing: border-box;
+  padding: 4px;
+  cursor: pointer;
+  &:hover {
+    color: #d9ff00;
+  }
+  &:first-child {
+    margin-top: 15px;
+  }
+`;
+
+export default function Section({
   title,
   activeSection,
   setActiveSection,
   listSection,
   handleListSectionClick,
   items,
-}) => {
+}: SectionProps) {
   return (
-    <div className="ages">
-      <ul className="teenager">
-        <li>
-          <span
-            className="custom-div div-8"
-            onClick={() => setActiveSection(title)}
-          >
-            {title}
-          </span>
-          {activeSection === title && (
-            <ul className="physical__list">
-              {items.map((item) => (
-                <li
-                  key={item.section}
-                  className={`common ${
-                    listSection === item.section ? 'clicked' : ''
-                  }`}
-                  onClick={() => handleListSectionClick(item.section)}
-                >
-                  {item.label}
-                </li>
-              ))}
-            </ul>
-          )}
-        </li>
-      </ul>
-    </div>
+    <Ages>
+      <Span onClick={() => setActiveSection(title)}>{title}</Span>
+      {activeSection === title && (
+        <Ul>
+          {items.map((item) => (
+            <Li
+              key={item.section}
+              className={`common ${
+                listSection === item.section ? 'clicked' : ''
+              }`}
+              onClick={() => handleListSectionClick(item.section)}
+            >
+              {item.label}
+            </Li>
+          ))}
+        </Ul>
+      )}
+    </Ages>
   );
-};
-
-export default Section;
+}

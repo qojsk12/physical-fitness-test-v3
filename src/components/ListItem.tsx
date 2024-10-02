@@ -1,10 +1,14 @@
-// components/ListItem.tsx
-
 import React, {useState} from 'react';
-import '../styles/ListItem.css';
 import {Item} from '../types';
 import Modal from './Modal';
 import ModalContent from './ModalContent';
+import {
+  DesBox,
+  ImgBox,
+  ImgDescription,
+  PhysicalListItem,
+  Video,
+} from '../styles/styled-components';
 
 interface ListItemProps {
   item: Item;
@@ -22,24 +26,24 @@ const ListItem: React.FC<ListItemProps> = ({item}) => {
     setIsModalOpen(false);
   };
   return (
-    <div className="physical__list-item" onClick={openModal}>
-      <div className="img__box">
-        <video className="gif-img" controlsList="nofullscreen" controls muted>
+    <PhysicalListItem onClick={openModal}>
+      <ImgBox>
+        <Video controlsList="nofullscreen" controls muted>
           <source src={item.videoSrc} type="video/mp4" />
-        </video>
-      </div>
-      <div className="des__box">
-        <div className="img__description">종목</div>
-        <div className="img__description">{item.title}</div>
-        <div className="img__description">{item.gradingMethod}</div>
-        <div className="img__description">{item.description}</div>
-        <div className="img__description span">{item.duration}</div>
-      </div>
+        </Video>
+      </ImgBox>
+      <DesBox>
+        <ImgDescription>종목</ImgDescription>
+        <ImgDescription>{item.title}</ImgDescription>
+        <ImgDescription>{item.gradingMethod}</ImgDescription>
+        <ImgDescription>{item.description}</ImgDescription>
+        <ImgDescription className="span">{item.duration}</ImgDescription>
+      </DesBox>
 
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <ModalContent item={item} />
       </Modal>
-    </div>
+    </PhysicalListItem>
   );
 };
 

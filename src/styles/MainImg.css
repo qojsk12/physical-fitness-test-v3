@@ -1,9 +1,0 @@
-.physical__list-item.main {
-  display: flex;
-  width: 1200px;
-}
-
-.physical__list-item.main .mainImg {
-  width: 100%;
-  height: 100%;
-}

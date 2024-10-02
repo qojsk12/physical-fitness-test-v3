@@ -10,11 +10,10 @@ import {
   a__SpeedItems,
   a__PowerItems,
   e__CadioItems,
-} from './data';
-import '../styles/PhysicalFitnessAssessment.css';
+} from '../styles/data';
 import List from './List';
 import {Item} from '../types';
-import {AssessmentContext} from '../components/AssessmentContext';
+import {AssessmentContext} from './AssessmentContext';
 import styled from 'styled-components';
 
 const Container = styled.div`

@@ -3,7 +3,14 @@ import {useNavigate} from 'react-router-dom';
 import {FirebaseError} from 'firebase/app';
 import {signInWithEmailAndPassword} from 'firebase/auth';
 import {auth} from '../firebase';
-import {Center, Error, Form, Input, Title, Wrapper} from './AuthComponents';
+import {
+  Center,
+  Error,
+  Form,
+  Input,
+  Title,
+  Wrapper,
+} from '../styles/AuthComponents';
 
 export default function LogIn() {
   const navigate = useNavigate();

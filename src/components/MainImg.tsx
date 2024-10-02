@@ -1,7 +1,11 @@
 import BloodDes from '../assets/images/BloodDes.png';
 import Blood from '../assets/images/Blood.png';
-import '../styles/MainImg.css';
-import {PhysicalListDes} from '../styles/styled-components';
+import {
+  ImgBox,
+  ImgMain,
+  PhysicalListDes,
+  PhysicalListItem,
+} from '../styles/styled-components';
 
 interface MainImgProps {
   listImg: string | null;
@@ -11,18 +15,18 @@ interface MainImgProps {
 export default function MainImg({listImg, handleListImgClick}: MainImgProps) {
   return (
     <PhysicalListDes>
-      <div className="physical__list-item main">
-        <div
-          className="img__box mainImg"
+      <PhysicalListItem className="main">
+        <ImgBox
+          className="mainImg"
           onClick={() => handleListImgClick('blooddes')}
         >
           {listImg === 'blooddes' ? (
-            <img className="main-img" src={BloodDes} alt="" />
+            <ImgMain src={BloodDes} alt="" />
           ) : (
-            <img className="main-img" src={Blood} alt="" />
+            <ImgMain src={Blood} alt="" />
           )}
-        </div>
-      </div>
+        </ImgBox>
+      </PhysicalListItem>
     </PhysicalListDes>
   );
 }
