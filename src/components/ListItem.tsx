@@ -33,11 +33,11 @@ const ListItem: React.FC<ListItemProps> = ({item}) => {
         </Video>
       </ImgBox>
       <DesBox>
-        <ImgDescription>종목</ImgDescription>
-        <ImgDescription>{item.title}</ImgDescription>
-        <ImgDescription>{item.gradingMethod}</ImgDescription>
-        <ImgDescription>{item.description}</ImgDescription>
-        <ImgDescription className="span">{item.duration}</ImgDescription>
+        <ImgDescription>종목 : {item.title}</ImgDescription>
+        <ImgDescription>
+          {item.gradingMethod} : {item.description}
+        </ImgDescription>
+        <ImgDescription>{item.duration}</ImgDescription>
       </DesBox>
 
       <Modal isOpen={isModalOpen} onClose={closeModal}>

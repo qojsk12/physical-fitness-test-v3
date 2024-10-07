@@ -70,14 +70,6 @@ const Duration = styled.div`
   padding-top: 10px;
 `;
 
-// const StyledIframe = styled.iframe`
-//   display: flex;
-//   width: 100%;
-//   height: 100%;
-//   align-items: center;
-//   justify-content: center;
-// `;
-
 interface ModalContentProps {
   item: Item;
 }
@@ -94,10 +86,6 @@ export default function ModalContent({item}: ModalContentProps) {
         <Title>종목: {item.title}</Title>
         <Description>
           {item.gradingMethod}: {item.description}
-          {/* <StyledIframe
-            src="https://nfa.kspo.or.kr/reserve/0/selectMeasureGradeItemListByAgeSe.kspo#"
-            title="naver"
-          ></StyledIframe> */}
         </Description>
         <Duration>{item.duration}</Duration>
       </DesBox>

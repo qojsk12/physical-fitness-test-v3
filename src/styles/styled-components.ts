@@ -16,9 +16,9 @@ export const PhysicalListItem = styled.div`
   height: 800px;
   box-shadow: 0px 5px 10px 0px #898888;
   box-sizing: border-box;
-  border: 3px solid #000;
+  border: 2px solid #000;
   background-color: #000;
-  gap: 3px;
+  gap: 2px;
   &.main {
     display: flex;
     width: 1200px;
@@ -51,9 +51,9 @@ export const DesBox = styled.div`
   background-color: #000;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(2, 1fr); */
   grid-template-rows: repeat(3, 1fr);
-  gap: 3px;
+  gap: 2px;
 `;
 
 export const ImgDescription = styled.div`
@@ -63,9 +63,6 @@ export const ImgDescription = styled.div`
   align-items: center;
   font-size: 20px;
   white-space: nowrap;
-  &.span {
-    grid-column: span 2;
-  }
 `;
 
 export const Span = styled.span`

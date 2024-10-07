@@ -19,7 +19,7 @@ export const t__CardioItems = [
     title: '20m 왕복 오래달리기',
     gradingMethod: '등급 산정 방식',
     description: '횟수',
-    duration: '진행 시간: 최대한 오래',
+    duration: '진행 시간: 파울 2번 시 종료',
   },
   {
     videoSrc: 트레드밀,
@@ -43,7 +43,7 @@ export const t__MuscularItems = [
     title: '윗몸 말아올리기',
     gradingMethod: '등급 산정 방식',
     description: '횟수',
-    duration: '최대한 많이',
+    duration: '파울 2번 시 종료',
   },
   {
     videoSrc: 반복점프,
@@ -60,7 +60,7 @@ export const a__CardioItems = [
     title: '20m 왕복 오래달리기',
     gradingMethod: '등급 산정 방식',
     description: '횟수',
-    duration: '진행 시간: 최대한 오래',
+    duration: '진행 시간: 파울 2번 시 종료',
   },
   {
     videoSrc: 트레드밀,
