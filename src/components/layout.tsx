@@ -21,11 +21,13 @@ const Menu = styled.div`
   grid-template-columns: 1fr 10fr;
   align-items: center;
   justify-content: space-between;
-  padding: 0 30px;
   box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
 `;
 
 const HamburgerIcon = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
   cursor: pointer;
   svg {
     width: 40px;

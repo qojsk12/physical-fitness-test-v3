@@ -18,7 +18,6 @@ const GlobalStyles = createGlobalStyle`
   * {
     box-sizing: border-box;
     text-decoration: none;
-
   }
   body {
     font-family: "Jua", sans-serif;

@@ -18,7 +18,7 @@ export default function AnimatedText() {
   const pauseTime = 50000; // 모든 글자가 다 나타난 후 대기 시간
 
   useEffect(() => {
-    const texts = ['시흥체력인증센터에 오신걸 환영합니다.'];
+    const texts = ['시흥체력인증센터에 오신 것을 환영합니다.'];
     const currentText = texts[textIndex]; // 현재 보여줄 문장
 
     if (charIndex < currentText.length) {

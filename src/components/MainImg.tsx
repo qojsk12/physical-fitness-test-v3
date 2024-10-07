@@ -1,4 +1,4 @@
-import BloodDes from '../assets/images/BloodDes.png';
+import BloodDes from '../assets/images/BloodDes.jpg';
 import Blood from '../assets/images/Blood.png';
 import {
   ImgBox,
