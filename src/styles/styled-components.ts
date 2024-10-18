@@ -21,13 +21,14 @@ export const PhysicalListItem = styled.div`
   gap: 2px;
   &.main {
     display: flex;
-    width: 1200px;
+    max-width: 1200px;
+    width: 100%;
   }
 `;
 
 export const ImgBox = styled.div`
   width: 100%;
-  height: 650px;
+
   &.mainImg {
     height: 100%;
   }
