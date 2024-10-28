@@ -25,6 +25,10 @@ const Container = styled.div`
   .clicked {
     color: #d9ff00;
   }
+  @media screen and (max-width: 1080px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const SelectMenu = styled.div`
@@ -35,11 +39,21 @@ const SelectMenu = styled.div`
   background-color: #083e58;
   color: #fff;
   width: 175px;
+  @media screen and (max-width: 1080px) {
+    height: 170px;
+    flex-direction: row;
+    width: 100%;
+    align-items: first baseline;
+    justify-content: center;
+  }
 `;
 
 const H2Title = styled.h2`
   font-size: 30px;
   padding-top: 14px;
+  @media screen and (max-width: 1080px) {
+    display: none;
+  }
 `;
 
 const GifDescription = styled.div`

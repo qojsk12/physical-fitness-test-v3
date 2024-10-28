@@ -7,6 +7,10 @@ export const PhysicalListDes = styled.div`
   gap: 50px;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 1080px) {
+    flex-direction: column;
+    padding: 50px;
+  }
 `;
 
 export const PhysicalListItem = styled.div`

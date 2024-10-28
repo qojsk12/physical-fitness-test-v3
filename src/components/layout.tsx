@@ -14,6 +14,10 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-rows: 1fr 15fr;
   min-height: 100vh;
+  @media screen and (max-width: 1080px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Menu = styled.div`

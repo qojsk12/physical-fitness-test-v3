@@ -12,6 +12,9 @@ const SliderContainer = styled.div`
   width: 100%;
   max-width: 566px;
   height: 100%;
+  @media screen and (max-width: 1080px) {
+    display: none;
+  }
   .slick-dots {
     padding: 0;
     margin: 0;

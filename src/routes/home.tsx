@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   align-items: flex-start;
   gap: 40px;
   padding: 20px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1080px) {
     flex-direction: column;
     align-items: center;
     gap: 20px;
@@ -26,7 +26,6 @@ const Wrapper = styled.div`
 `;
 
 const SnsBox = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,6 +38,9 @@ const SnsBox = styled.div`
     transform: translateY(-5px);
     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
   } */
+  @media screen and (max-width: 1080px) {
+    display: none;
+  }
 `;
 
 const Title = styled.div`
