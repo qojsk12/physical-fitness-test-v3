@@ -15,6 +15,7 @@ import List from './List';
 import {Item} from '../types';
 import {AssessmentContext} from './AssessmentContext';
 import styled from 'styled-components';
+import {fadeIn} from '../styles/styled-components';
 
 const Container = styled.div`
   width: 100%;
@@ -39,8 +40,8 @@ const SelectMenu = styled.div`
   background-color: #083e58;
   color: #fff;
   width: 175px;
+  transition: max-height 0.3s ease-in-out;
   @media screen and (max-width: 1080px) {
-    height: 170px;
     flex-direction: row;
     width: 100%;
     align-items: first baseline;
@@ -59,6 +60,7 @@ const H2Title = styled.h2`
 const GifDescription = styled.div`
   width: 100%;
   box-sizing: border-box;
+  animation: ${fadeIn} 1s ease-in-out;
 `;
 
 export default function PhysicalFitnessAssessment() {
@@ -141,7 +143,7 @@ export default function PhysicalFitnessAssessment() {
         />
       </SelectMenu>
 
-      <GifDescription>
+      <GifDescription key={listSection || 'default'}>
         {listSection === null && (
           <MainImg listImg={listImg} handleListImgClick={handleListImgClick} />
         )}

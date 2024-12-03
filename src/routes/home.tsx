@@ -2,14 +2,16 @@ import ImageSlider from '../components/ImageSlider';
 import Event4 from '../assets/images/체력숫자 홍보 포스터(메인).jpg';
 import Event1 from '../assets/images/건강체력기준 포스터.jpg';
 import Event2 from '../assets/images/알고보니 운동천재 포스터.png';
+import Event3 from '../assets/images/체력인증절차.jpg';
 import styled from 'styled-components';
 import SnsItem from '../components/SnsItem';
 import Calender from '../components/Calender';
 import Instar from '../assets/images/ins.png';
 import Naver from '../assets/images/naver.png';
 import Kakao from '../assets/images/kaka.png';
+import {fadeIn} from '../styles/styled-components';
 
-const imageUrls = [Event1, Event2, Event4];
+const imageUrls = [Event1, Event2, Event3, Event4];
 const imageUrls2 = [Instar, Naver, Kakao];
 
 const Wrapper = styled.div`
@@ -18,6 +20,7 @@ const Wrapper = styled.div`
   align-items: flex-start;
   gap: 40px;
   padding: 20px;
+  animation: ${fadeIn} 1.5s ease-out;
   @media screen and (max-width: 1080px) {
     flex-direction: column;
     align-items: center;

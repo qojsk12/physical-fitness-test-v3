@@ -85,9 +85,15 @@ export default function ModalContent({item}: ModalContentProps) {
       <DesBox>
         <Title>종목: {item.title}</Title>
         <Description>
-          {item.gradingMethod}: {item.description}
+          {Array.isArray(item.duration) ? (
+            item.duration.map((durationItem, index) => (
+              <div key={index}>{durationItem}</div>
+            ))
+          ) : (
+            <div>{item.duration}</div>
+          )}
         </Description>
-        <Duration>{item.duration}</Duration>
+        <Duration>{item.description}</Duration>
       </DesBox>
     </Wrapper>
   );

@@ -1,4 +1,15 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
+
+export const fadeIn = keyframes`
+from {
+  opacity: 0;
+  transform: translateY(0px);
+}
+to {
+  opacity: 1;
+  transform: translateY(0);
+}
+`;
 
 export const PhysicalListDes = styled.div`
   display: flex;
@@ -22,7 +33,6 @@ export const PhysicalListItem = styled.div`
   box-sizing: border-box;
   border: 2px solid #000;
   background-color: #000;
-  gap: 2px;
   &.main {
     display: flex;
     max-width: 1200px;
@@ -32,7 +42,6 @@ export const PhysicalListItem = styled.div`
 
 export const ImgBox = styled.div`
   width: 100%;
-
   &.mainImg {
     height: 100%;
   }
@@ -68,6 +77,10 @@ export const ImgDescription = styled.div`
   align-items: center;
   font-size: 20px;
   white-space: nowrap;
+`;
+
+export const Btn = styled.div`
+  cursor: pointer;
 `;
 
 export const Span = styled.span`

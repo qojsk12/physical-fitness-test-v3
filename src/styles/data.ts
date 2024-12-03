@@ -33,7 +33,7 @@ export const t__CardioItems = [
     title: '스텝 박스',
     gradingMethod: '등급 산정 방식',
     description: '심박수 + 체중 + 신장',
-    duration: '남자: 3분, 50.8cm, 120bpm, 여자: 3분, 45.7cm, 96bpm',
+    duration: ['남자: 3분, 50.8cm, 120bpm', '여자: 3분, 45.7cm, 96bpm'],
   },
 ];
 

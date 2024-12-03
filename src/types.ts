@@ -5,5 +5,5 @@ export interface Item {
   title: string;
   gradingMethod: string;
   description: string;
-  duration: string;
+  duration: string | string[];
 }

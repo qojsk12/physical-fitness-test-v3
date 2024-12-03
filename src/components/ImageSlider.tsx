@@ -50,7 +50,7 @@ const SliderContent = styled.div`
 
 export default function ImageSlider({images}: ImageSliderProps) {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 1000,
     slidesToShow: 1,
