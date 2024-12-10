@@ -9,6 +9,7 @@ interface AssessmentContextType {
   setActiveSection: (section: string | null) => void;
   setListSection: (section: string | null) => void;
   setListImg: (img: string | null) => void;
+  resetStates: () => void; // 상태 초기화 메서드 추가
 }
 
 // Context와 Provider 생성
@@ -21,6 +22,13 @@ const AssessmentProvider: React.FC<{children: ReactNode}> = ({children}) => {
   const [listSection, setListSection] = useState<string | null>(null);
   const [listImg, setListImg] = useState<string | null>(null);
 
+  // 상태 초기화 메서드
+  const resetStates = () => {
+    setActiveSection(null);
+    setListSection(null);
+    setListImg(null);
+  };
+
   useEffect(() => {
     let mouseTimer: ReturnType<typeof setTimeout>;
 
@@ -28,9 +36,7 @@ const AssessmentProvider: React.FC<{children: ReactNode}> = ({children}) => {
       clearTimeout(mouseTimer);
 
       mouseTimer = setTimeout(() => {
-        setActiveSection(null);
-        setListSection(null);
-        setListImg(null);
+        resetStates(); // 상태 초기화 메서드 호출
       }, 300000); // 5분(300,000ms) 후에 상태를 초기화
     };
 
@@ -51,6 +57,7 @@ const AssessmentProvider: React.FC<{children: ReactNode}> = ({children}) => {
         setActiveSection,
         setListSection,
         setListImg,
+        resetStates, // 상태 초기화 메서드 제공
       }}
     >
       {children}

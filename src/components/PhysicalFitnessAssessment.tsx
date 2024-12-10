@@ -1,4 +1,3 @@
-// components/PhysicalFitnessAssessment.tsx
 import {useContext} from 'react';
 import _ from 'lodash';
 import Section from './Section';
@@ -41,6 +40,7 @@ const SelectMenu = styled.div`
   color: #fff;
   width: 175px;
   transition: max-height 0.3s ease-in-out;
+  position: relative;
   @media screen and (max-width: 1080px) {
     flex-direction: row;
     width: 100%;
@@ -63,6 +63,18 @@ const GifDescription = styled.div`
   animation: ${fadeIn} 1s ease-in-out;
 `;
 
+const Reset = styled.div`
+  position: absolute;
+  bottom: 10px;
+  margin: 0 auto;
+  color: #808080;
+  font-size: 20px;
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+  }
+`;
+
 export default function PhysicalFitnessAssessment() {
   const context = useContext(AssessmentContext);
 
@@ -79,6 +91,7 @@ export default function PhysicalFitnessAssessment() {
     setActiveSection,
     setListSection,
     setListImg,
+    resetStates, // 상태 초기화 메서드
   } = context;
 
   const handleSectionClick = _.debounce((section: string) => {
@@ -141,6 +154,8 @@ export default function PhysicalFitnessAssessment() {
             {section: 'e__cadio', label: '심폐지구력', data: e__CadioItems},
           ]}
         />
+        {/* 상태 초기화 버튼 */}
+        <Reset onClick={resetStates}>처음으로</Reset>
       </SelectMenu>
 
       <GifDescription key={listSection || 'default'}>
