@@ -1,32 +1,19 @@
-import {createBrowserRouter, RouterProvider} from 'react-router-dom';
-import Layout from './components/layout';
-import Home from './routes/home';
-import {createGlobalStyle} from 'styled-components';
-import reset from 'styled-reset';
-import PhysicalFitnessAssessment from './components/PhysicalFitnessAssessment';
-import {useEffect, useState} from 'react';
-import LoadingScrean from './components/loading-screen';
-import {auth} from './firebase';
-import Login from './components/Login';
-import CreateAccount from './components/CreateAccount';
-import Guide from './components/Guide';
-import {AssessmentProvider} from './components/AssessmentContext';
-import ProtectedRoute from './components/ProtectedRoute';
-
-const GlobalStyles = createGlobalStyle`
-  ${reset};
-  * {
-    box-sizing: border-box;
-    text-decoration: none;
-  }
-  body {
-    font-family: "Jua", sans-serif;
-  }
-`;
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Layout from "./components/layout";
+import Home from "./routes/home";
+import Profile from "./routes/Profile";
+import Login from "./routes/Login";
+import CreateAccount from "./routes/CreateAccount";
+import { createGlobalStyle, styled } from "styled-components";
+import reset from "styled-reset";
+import { useEffect, useState } from "react";
+import LoadingScreen from "./components/loading-screen";
+import { auth } from "./firebase";
+import ProtectedRoute from "./components/protected-route";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: (
       <ProtectedRoute>
         <Layout />
@@ -34,49 +21,57 @@ const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '',
+        path: "",
         element: <Home />,
       },
       {
-        path: 'physical',
-        element: <PhysicalFitnessAssessment />,
-      },
-      {
-        path: 'guide',
-        element: <Guide />,
+        path: "profile",
+        element: <Profile />,
       },
     ],
   },
   {
-    path: '/login',
+    path: "/login",
     element: <Login />,
   },
   {
-    path: '/create-account',
+    path: "/create-account",
     element: <CreateAccount />,
   },
 ]);
 
+const GlobalStyles = createGlobalStyle`
+  ${reset};
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    background-color: black;
+    color:white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+`;
+
+const Wrapper = styled.div`
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+`;
+
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setLoading] = useState(true);
   const init = async () => {
     await auth.authStateReady();
-    setIsLoading(false);
+    setLoading(false);
   };
   useEffect(() => {
     init();
   }, []);
   return (
-    <>
+    <Wrapper>
       <GlobalStyles />
-      {isLoading ? (
-        <LoadingScrean />
-      ) : (
-        <AssessmentProvider>
-          <RouterProvider router={router} />
-        </AssessmentProvider>
-      )}
-    </>
+      {isLoading ? <LoadingScreen /> : <RouterProvider router={router} />}
+    </Wrapper>
   );
 }
 

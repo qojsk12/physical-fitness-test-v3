@@ -1,200 +1,98 @@
-import {Link, Outlet, useNavigate, useLocation} from 'react-router-dom';
-import {useState} from 'react';
-import styled from 'styled-components';
-import TimeoutRedirect from './timeoutredirect';
-import {auth} from '../firebase';
-import SidebarModal from './SidebarModal';
-import AnimatedText from './AnimatedText';
-
-interface MenuItemProps {
-  isActive?: boolean;
-}
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import { auth } from "../firebase";
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-rows: 1fr 15fr;
-  min-height: 100vh;
-  @media screen and (max-width: 1080px) {
-    display: flex;
-    flex-direction: column;
-  }
+  gap: 20px;
+  padding: 50px 0px;
+  width: 100%;
+  max-width: 800px;
+  grid-template-columns: 1fr 3fr;
+  height: 100%;
 `;
-
 const Menu = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 10fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+  gap: 20px;
 `;
 
-const HamburgerIcon = styled.div`
+const MenuItem = styled.div`
+  cursor: pointer;
   display: flex;
   align-items: center;
-  margin-left: 20px;
-  cursor: pointer;
+  justify-content: center;
+  border: 2px solid white;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
   svg {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    fill: white;
   }
-`;
-
-const MenuItem = styled.div<MenuItemProps>`
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-size: 12px;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: ${({isActive}) => (isActive ? '#e0f7fa' : 'transparent')};
-
-  &:hover {
-    background-color: #f0f0f0;
-  }
-
-  svg {
-    width: 40px;
-    height: 40px;
-    fill: ${({isActive}) => (isActive ? '#001aff' : '#000')};
-  }
-
   &.log-out {
-    margin-top: auto;
+    border-color: tomato;
     svg {
-      fill: #d90101;
+      fill: tomato;
     }
   }
-`;
-
-const Des = styled.div<{isActive?: boolean}>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  text-decoration: none;
-  margin: 0 auto;
-  color: ${({isActive}) => (isActive ? '#001aff' : '#000')};
-`;
-
-const Main = styled.div`
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 `;
 
 export default function Layout() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const location = useLocation(); // 현재 URL을 가져옴
   const navigate = useNavigate();
-
   const onLogOut = async () => {
-    const ok = confirm('로그아웃 하시겠습니까?');
+    const ok = confirm("로그아웃 하시겠습니까?");
     if (ok) {
       await auth.signOut();
-      navigate('/login');
+      navigate("/login");
     }
   };
-
   return (
     <Wrapper>
       <Menu>
-        <HamburgerIcon onClick={() => setIsSidebarOpen(true)}>
-          <svg
-            data-slot="icon"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path
-              clipRule="evenodd"
-              fillRule="evenodd"
-              d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
-            ></path>
-          </svg>
-        </HamburgerIcon>
-        <AnimatedText />
-      </Menu>
-
-      <SidebarModal
-        isOpen={isSidebarOpen}
-        onClose={() => setIsSidebarOpen(false)}
-      >
-        <Link to="/" onClick={() => setIsSidebarOpen(false)}>
-          <MenuItem isActive={location.pathname === '/'}>
+        <Link to="/profile">
+          <MenuItem>
             <svg
-              fill="currentColor"
-              viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="currentColor"
             >
-              <path
-                clipRule="evenodd"
-                fillRule="evenodd"
-                d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z"
-              ></path>
+              <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
+              <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
             </svg>
-            <Des isActive={location.pathname === '/'}>메인 화면</Des>
           </MenuItem>
         </Link>
-        <Link to="/physical" onClick={() => setIsSidebarOpen(false)}>
-          <MenuItem isActive={location.pathname === '/physical'}>
+        <Link to="/">
+          <MenuItem>
             <svg
-              fill="currentColor"
-              viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="currentColor"
             >
               <path
-                clipRule="evenodd"
-                fillRule="evenodd"
-                d="M2.25 6a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V6Zm18 3H3.75v9a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V9Zm-15-3.75A.75.75 0 0 0 4.5 6v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75V6a.75.75 0 0 0-.75-.75H5.25Zm1.5.75a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V6Zm3-.75A.75.75 0 0 0 9 6v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75V6a.75.75 0 0 0-.75-.75H9.75Z"
-              ></path>
+                fill-rule="evenodd"
+                d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
+                clip-rule="evenodd"
+              />
             </svg>
-            <Des isActive={location.pathname === '/physical'}>측정 안내</Des>
-          </MenuItem>
-        </Link>
-        <Link to="/guide" onClick={() => setIsSidebarOpen(false)}>
-          <MenuItem isActive={location.pathname === '/guide'}>
-            <svg
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path
-                clipRule="evenodd"
-                fillRule="evenodd"
-                d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
-              ></path>
-            </svg>
-            <Des isActive={location.pathname === '/guide'}>인증 기준</Des>
           </MenuItem>
         </Link>
         <MenuItem onClick={onLogOut} className="log-out">
           <svg
-            fill="currentColor"
-            viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="currentColor"
           >
             <path
-              clipRule="evenodd"
-              fillRule="evenodd"
-              d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z"
-            ></path>
+              fill-rule="evenodd"
+              d="M7.5 3.75A1.5 1.5 0 0 0 6 5.25v13.5a1.5 1.5 0 0 0 1.5 1.5h6a1.5 1.5 0 0 0 1.5-1.5V15a.75.75 0 0 1 1.5 0v3.75a3 3 0 0 1-3 3h-6a3 3 0 0 1-3-3V5.25a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3V9A.75.75 0 0 1 15 9V5.25a1.5 1.5 0 0 0-1.5-1.5h-6Zm5.03 4.72a.75.75 0 0 1 0 1.06l-1.72 1.72h10.94a.75.75 0 0 1 0 1.5H10.81l1.72 1.72a.75.75 0 1 1-1.06 1.06l-3-3a.75.75 0 0 1 0-1.06l3-3a.75.75 0 0 1 1.06 0Z"
+              clip-rule="evenodd"
+            />
           </svg>
-          <Des isActive={false}>로그아웃</Des>
         </MenuItem>
-      </SidebarModal>
-
-      <Main>
-        <TimeoutRedirect>
-          <Outlet />
-        </TimeoutRedirect>
-      </Main>
+      </Menu>
+      <Outlet />
     </Wrapper>
   );
 }
