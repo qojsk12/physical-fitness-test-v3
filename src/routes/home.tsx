@@ -1,3 +1,12 @@
+import styled from "styled-components";
+import ExercisePrescription from "../components/exercise-prescription";
+
+const Wrapper = styled.div``;
+
 export default function Home() {
-  return <h1></h1>;
+  return (
+    <Wrapper>
+      <ExercisePrescription />
+    </Wrapper>
+  );
 }

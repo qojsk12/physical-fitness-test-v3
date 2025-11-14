@@ -44,12 +44,21 @@ const GlobalStyles = createGlobalStyle`
   ${reset};
   * {
     box-sizing: border-box;
-  }
+     -ms-overflow-style: none;
+     ::-webkit-scrollbar {
+      display: none;
+
+    }
+    }
+    
+    
   body {
-    background-color: black;
-    color:white;
+    background-color: white;
+    color: black;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
+
+
 `;
 
 const Wrapper = styled.div`

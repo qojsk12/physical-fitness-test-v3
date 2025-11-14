@@ -5,17 +5,16 @@ import { auth } from "../firebase";
 const Wrapper = styled.div`
   display: grid;
   gap: 20px;
-  padding: 50px 0px;
+
   width: 100%;
-  max-width: 800px;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 2fr;
   height: 100%;
 `;
 const Menu = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   gap: 20px;
+  padding: 20px 0px;
 `;
 
 const MenuItem = styled.div`
@@ -29,7 +28,7 @@ const MenuItem = styled.div`
   border-radius: 50%;
   svg {
     width: 30px;
-    fill: white;
+    fill: blue;
   }
   &.log-out {
     border-color: tomato;
@@ -51,7 +50,7 @@ export default function Layout() {
   return (
     <Wrapper>
       <Menu>
-        <Link to="/profile">
+        <Link to="/">
           <MenuItem>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +62,7 @@ export default function Layout() {
             </svg>
           </MenuItem>
         </Link>
-        <Link to="/">
+        <Link to="/profile">
           <MenuItem>
             <svg
               xmlns="http://www.w3.org/2000/svg"
