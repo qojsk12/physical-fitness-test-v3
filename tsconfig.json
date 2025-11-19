@@ -20,6 +20,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "src/main.tsx"],
-  "references": [{"path": "./tsconfig.node.json"}]
+  "include": [
+    "src",
+    "src/main.tsx",
+    "src/components/prescription/ui/FloatingButton.tsx"
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
