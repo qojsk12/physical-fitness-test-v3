@@ -28,9 +28,8 @@ export const GlobalStyles = createGlobalStyle`
 
     // 🔥 페이지 내부 패딩 30px로 정확히 줄임 (바깥 테두리 ~ 내용물 여백)
     [data-prescription-page] {
-      width: 210mm !important;
-      height: 297mm !important;
-      min-height: 297mm !important;
+      width: 100% !important;
+      height: 100vh !important;
       margin: 0 !important;
       padding: 30px !important;  // ← 30px로 수정 (기존 20mm → 30px, mm ≈ 2.83px라 30px ≈ 10.6mm)
       box-shadow: none !important;
@@ -38,7 +37,6 @@ export const GlobalStyles = createGlobalStyle`
       page-break-after: always;
       display: flex !important;
       flex-direction: column !important;
-      justify-content: space-between !important;  // 내용물 위아래 꽉 채움
     }
 
     // 그리드 영역이 페이지 높이 100% 채움
