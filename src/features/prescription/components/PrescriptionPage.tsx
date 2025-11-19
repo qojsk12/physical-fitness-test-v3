@@ -21,12 +21,6 @@ const Page = styled.div`
   // 🔥 화면에서도 flex로 꽉 채움 (인쇄와 동일)
   display: flex;
   flex-direction: column;
-  height: 100vh; // 스크롤 래퍼 안에서 100% 채움
-
-  @media print {
-    padding: 30px !important; // 인쇄 시에도 30px 강제
-    height: 297mm !important;
-  }
 `;
 
 // 나머지 코드 그대로 유지 (DeleteButton, Title 등)
@@ -62,6 +56,13 @@ const DeleteButton = styled(motion.button)`
   border-radius: 50%;
   font-size: 20px;
   cursor: pointer;
+`;
+
+const Explain = styled.div`
+  border: 2px solid #000;
+  height: 50px;
+  border-radius: 10px;
+  margin-top: 16px;
 `;
 
 interface Props {

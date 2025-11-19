@@ -16,21 +16,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   @media print {
-    [data-print-hide] { display: none !important; }
-
-    // 🔥 A4 용지 100% 꽉 차게 (여백 0 유지)
     @page {
-      size: A4 portrait;
-      margin: 0 !important;  // 외부 여백 제거
-    }
-
-    html, body {
-      width: 210mm !important;
-      height: 297mm !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      overflow: visible !important;
-      background: white !important;
+      margin: 0 auto !important;  // 외부 여백 제거
     }
 
     // 🔥 페이지 내부 패딩 30px로 정확히 줄임 (바깥 테두리 ~ 내용물 여백)
