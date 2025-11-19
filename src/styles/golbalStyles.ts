@@ -16,8 +16,14 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   @media print {
+    
     @page {
-      margin: 0 auto !important;  // 외부 여백 제거
+      margin: 0 !important;  
+    }
+
+    html, body {
+      height: auto;
+      overflow: visible;
     }
 
     // 🔥 페이지 내부 패딩 30px로 정확히 줄임 (바깥 테두리 ~ 내용물 여백)

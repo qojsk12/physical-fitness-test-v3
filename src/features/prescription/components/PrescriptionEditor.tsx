@@ -26,6 +26,7 @@ const ScrollWrapper = styled.div`
   -webkit-overflow-scrolling: touch;
   width: 900px;
   margin: 0 auto;
+  height: 100%;
 `;
 
 const ContentWrapper = styled.div`

@@ -56,11 +56,15 @@ const DeleteButton = styled(motion.button)`
   border-radius: 50%;
   font-size: 20px;
   cursor: pointer;
+
+  @media print {
+    display: none;
+  }
 `;
 
 const Explain = styled.div`
   border: 2px solid #000;
-  height: 50px;
+  height: 100px;
   border-radius: 10px;
   margin-top: 16px;
 `;
