@@ -1,15 +1,22 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  height: 100%;
+  min-height: 100vh;
+  background: #111827;
+  color: white;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  width: 420px;
-  padding: 50px 0px;
+  justify-content: center;
 `;
+
+export const Box = styled.div`
+  width: 420px;
+  text-align: center;
+`;
+
 export const Title = styled.h1`
   font-size: 42px;
+  margin-bottom: 50px;
 `;
 export const Form = styled.form`
   margin-top: 50px;
@@ -40,7 +47,7 @@ export const Error = styled.span`
 
 export const Switcher = styled.span`
   color: #fff;
-  margin-top: 20px;
+  margin-top: 50px;
   a {
     color: #1d9bf0;
   }

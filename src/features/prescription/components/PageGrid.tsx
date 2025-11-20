@@ -13,20 +13,18 @@ const Grid = styled.div<{ count: number }>`
   padding: 16px;
   background-color: #fafafa;
 
-  // 🔥 height 100% 강제 (부모 flex에서 꽉 채움)
-  height: 100% !important;
-
   grid-template-columns: repeat(
     ${({ count }) => Math.ceil(Math.sqrt(Math.max(count, 4)))},
     1fr
   );
+
   grid-template-rows: repeat(
     ${({ count }) => Math.ceil(Math.sqrt(Math.max(count, 4)))},
     1fr
   );
 
   > * {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1.1 / 0.85;
   }
 
   @media print {

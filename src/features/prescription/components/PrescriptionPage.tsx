@@ -10,7 +10,6 @@ import { motion } from "framer-motion";
 
 const Page = styled.div`
   padding: 30px; // ← 화면에서도 30px로 통일 (인쇄와 동일하게)
-  box-sizing: border-box;
   background: white;
   border: 3px solid #000;
   border-radius: 12px;
@@ -21,18 +20,6 @@ const Page = styled.div`
   // 🔥 화면에서도 flex로 꽉 채움 (인쇄와 동일)
   display: flex;
   flex-direction: column;
-`;
-
-// 나머지 코드 그대로 유지 (DeleteButton, Title 등)
-
-const Content = styled.div`
-  flex: 1; // Title과 Grid 사이 공간 꽉 채움
-  display: flex;
-  flex-direction: column;
-`;
-
-const GridWrapper = styled.div`
-  flex: 1; // Grid가 남은 공간 100% 채움
 `;
 
 const Title = styled.h1`
@@ -66,7 +53,7 @@ const Explain = styled.div`
   border: 2px solid #000;
   height: 100px;
   border-radius: 10px;
-  margin-top: 16px;
+  margin-top: 25px;
 `;
 
 interface Props {
@@ -106,12 +93,8 @@ export default function PrescriptionPage({
           </DeleteButton>
         )}
         <Title>운동 처방전</Title>
-        <Content>
-          <GridWrapper>
-            <PageGrid pageId={id} images={page.images} onChange={onUpdate} />
-          </GridWrapper>
-          {/* <Explain></Explain> */}
-        </Content>
+        <PageGrid pageId={id} images={page.images} onChange={onUpdate} />
+        <Explain></Explain>
       </Page>
     </DragDropContext>
   );

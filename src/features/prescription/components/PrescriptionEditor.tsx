@@ -11,26 +11,24 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // 기존 스타일 복원 (스크롤 가능하게)
 const AppContainer = styled.div`
+  width: 100%;
   height: 100vh;
-  overflow: hidden;
   background: #f3f4f6;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   display: flex;
-  flex-direction: column;
 `;
 
 const ScrollWrapper = styled.div`
-  flex: 1;
-  overflow-y: auto;
   padding: 20px 0;
-  -webkit-overflow-scrolling: touch;
-  width: 900px;
+  width: 100%;
   margin: 0 auto;
   height: 100%;
+  flex: 1;
+  overflow-y: auto;
 `;
 
 const ContentWrapper = styled.div`
   width: 900px;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;

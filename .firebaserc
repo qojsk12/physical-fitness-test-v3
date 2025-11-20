@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "pft-v2-ae626"
-  }
+    "default": "exercise-prescription-46a7d",
+    "exercise-prescription": "exercise-prescription-46a7d"
+  },
+  "targets": {},
+  "etags": {}
 }
