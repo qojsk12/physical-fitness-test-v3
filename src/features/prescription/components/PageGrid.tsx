@@ -25,6 +25,7 @@ const Grid = styled.div<{ count: number }>`
 
   > * {
     aspect-ratio: 1.1 / 0.85;
+    min-height: 0;
   }
 
   @media print {

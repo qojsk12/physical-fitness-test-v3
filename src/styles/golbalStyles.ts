@@ -1,5 +1,4 @@
-// src/styles/globalStyles.ts (이 파일 전체 교체 - 인쇄 시 패딩 30px로 정확히 줄임)
-
+// src/styles/globalStyles.ts
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
@@ -16,22 +15,18 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   @media print {
-    
-    @page {
-      margin: 0 !important;  
-    }
+    @page { margin: 0 !important; }
 
     html, body {
       height: auto;
       overflow: visible;
     }
 
-    // 🔥 페이지 내부 패딩 30px로 정확히 줄임 (바깥 테두리 ~ 내용물 여백)
     [data-prescription-page] {
       width: 100% !important;
       height: 100vh !important;
       margin: 0 !important;
-      padding: 30px !important;  // ← 30px로 수정 (기존 20mm → 30px, mm ≈ 2.83px라 30px ≈ 10.6mm)
+      padding: 30px !important;
       box-shadow: none !important;
       border-radius: 0 !important;
       page-break-after: always;
@@ -39,17 +34,16 @@ export const GlobalStyles = createGlobalStyle`
       flex-direction: column !important;
     }
 
-    // 그리드 영역이 페이지 높이 100% 채움
     [data-prescription-page] > div {
       flex: 1;
       display: flex;
       flex-direction: column;
     }
 
-    // 그리드 자체도 100% 채움
     [data-prescription-page] > div > div {
       flex: 1;
       height: 100% !important;
+      display: grid !important;
     }
   }
 `;
